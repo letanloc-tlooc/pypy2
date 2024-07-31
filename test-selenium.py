@@ -26,6 +26,10 @@ try:
     
     # Thực hiện các thao tác trên trang, nếu cần
 
+    # Ví dụ: Tìm kiếm một video
+    search_box = driver.find_element(By.NAME, 'search_query')
+    search_box.send_keys("Selenium WebDriver")
+    search_box.send_keys(Keys.RETURN)
 
     # Đợi kết quả tìm kiếm xuất hiện
     WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, 'contents')))
