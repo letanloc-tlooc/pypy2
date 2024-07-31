@@ -9,7 +9,8 @@ import time
 
 
 service = Service('/usr/bin/geckodriver')
-options = webdriver.FirefoxOptions()
+options = webdriver.Firefox()
+options.add_argument('--headless')
 driver = webdriver.Firefox(service=service, options=options)
 
 # driver = webdriver.Firefox()
