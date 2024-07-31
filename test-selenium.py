@@ -11,7 +11,7 @@ import time
 service = Service('/usr/bin/geckodriver')
 options = Options()
 # Thêm tùy chọn chạy Firefox không giao diện người dùng
-options.add_argument('--headless')
+# options.add_argument('--headless')
 
 # Khởi tạo driver
 driver = webdriver.Firefox(service=service, options=options)
