@@ -7,15 +7,17 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.firefox.options import Options
 import time
 
-# Thiết lập tùy chọn cho Firefox
-options = Options()
-# options.headless = True  # Uncomment this line to run Firefox in headless mode (no GUI)
+driver = webdriver.Firefox()
 
-# Cấu hình Geckodriver
-service = Service(executable_path='/usr/bin/geckodriver')
+# # Thiết lập tùy chọn cho Firefox
+# options = Options()
+# # options.headless = True  # Uncomment this line to run Firefox in headless mode (no GUI)
 
-# Khởi động Firefox WebDriver với các tùy chọn
-driver = webdriver.Firefox(service=service, options=options)
+# # Cấu hình Geckodriver
+# service = Service(executable_path='/usr/bin/geckodriver')
+
+# # Khởi động Firefox WebDriver với các tùy chọn
+# driver = webdriver.Firefox(service=service, options=options)
 
 try:
     # Truy cập trang YouTube
