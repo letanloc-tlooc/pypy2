@@ -7,22 +7,14 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import time
 
-
+# Cấu hình dịch vụ và tùy chọn Firefox
 service = Service('/usr/bin/geckodriver')
+options = Options()
+# Thêm tùy chọn chạy Firefox không giao diện người dùng
+options.add_argument('--headless')
 
-driver = webdriver.Firefox(service=service, options=Options)
-
-# driver = webdriver.Firefox()
-
-# # Thiết lập tùy chọn cho Firefox
-# options = Options()
-# # # # options.headless = True  # Uncomment this line to run Firefox in headless mode (no GUI)
-
-# # # # Cấu hình Geckodriver
-# service = Service(executable_path='/usr/bin/geckodriver')
-
-# # # # Khởi động Firefox WebDriver với các tùy chọn
-# driver = webdriver.Firefox(service=service, options=options)
+# Khởi tạo driver
+driver = webdriver.Firefox(service=service, options=options)
 
 try:
     # Truy cập trang YouTube
@@ -31,9 +23,7 @@ try:
     # Đợi trang tải xong
     WebDriverWait(driver, 10).until(EC.title_contains("YouTube"))
     
-    # Thực hiện các thao tác trên trang, nếu cần
-
-    # Ví dụ: Tìm kiếm một video
+    # Tìm kiếm một video
     search_box = driver.find_element(By.NAME, 'search_query')
     search_box.send_keys("Selenium WebDriver")
     search_box.send_keys(Keys.RETURN)
